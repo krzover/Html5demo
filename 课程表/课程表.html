@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table{
+        border-collapse: collapse;
+        text-align: center;  
+        border: 3px solid slategray; 
+    }
+    th{
+        border-bottom: 3px solid slategrey;
+        background-color: slategrey;
+    }
+    td{
+        border-bottom: 3px solid slategrey;
+        width: 80px;
+        height:40px;
+    }
+    td[rowspan]{
+        border: 3px solid slategrey;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <caption style="font-size: 25px;">Python课程表</caption>
+        <thead>
+            <tr>
+                <th>时间</th>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>周末</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>上午</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td rowspan="2">自习</td>
+                    <td rowspan="3">python</td>
+                </tr>
+                <tr>
+                    <td>下午</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <td>python</td>
+                    <!--<td>python</td>-->
+                    <!--<td>python</td>-->
+                </tr>
+                <tr>
+                    <td>晚上</td>
+                    <td>自习</td>
+                    <td>自习</td>
+                    <td>自习</td>
+                    <td>自习</td>
+                    <td>自习</td>
+                    <td rowspan="1">自习</td>
+                    <!--<td>自习</td>-->
+                </tr>
+            </tbody>
+        </thead>
+    </table>
+</body>
+</html>

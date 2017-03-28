@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交注册</title>
+    <style>
+
+        table {
+            margin: 0 auto;
+            text-align: center;
+            border-collapse: collapse;
+            min-height: 530px;
+            min-width: 570px;
+        }
+        caption{
+            text-align: left;
+            font-size: 30px;
+        }
+        tr{
+            height: 5.69vh;
+        }
+        input[type='text']{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid red;
+        }
+        input[value='点击完成验证']{
+            height: 100%;
+            margin-left: 10%;
+            width: 80%;
+            color:white;
+            font-size: 30px;
+            background-color: slategray;
+            border-radius: 10px;
+        }
+        input[value='获取短信验证码']{
+            height: 100%;
+            font-size: 15px;
+            color:white;
+            background-color: limegreen;
+            border-radius: 10px;
+        }
+        input[value='提交注册']{
+            height: 100%;
+            width: 100%;
+            font-size: 30px;
+            color:white;
+            background-color: limegreen;
+            border-radius: 10px;
+        }
+        tr>th:nth-child(1){
+            text-align: right;
+        }
+         tr>th:nth-child(2){
+            text-align: left;
+        }
+         tr>th:nth-child(3){
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <caption>
+            <label>注册账号</label>
+        </caption>
+
+        <tr>
+            <th><label for="nickname">昵称</label></th>
+            <th><input type="text" id="nickname" placeholder="请输出昵称"></th>
+            <th>昵称不能为空</th>
+        </tr>
+        <tr>
+            <th><label for="psw">密码</label></th>
+            <th><input type="text" id="psw" placeholder="请输入密码"></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><label for="pswagain">确认密码</label></th>
+            <th><input type="text" id="pswagain" placeholder="请输入密码"></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><label>性别</label></th>
+            <th><label>男</label><input type="radio" name="sex" value="male"><label>女</label><input type="radio" name="sex" value="female"></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>
+                <label>生日</label>
+            </th>
+            <th>
+                <select>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                </select>
+                <select>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                </select>
+                <select>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                </select>
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>
+                <label>所在地</label>
+            </th>
+            <th>
+                <select>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                </select>
+                <select>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                </select>
+                <select>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                </select>
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><label>验证码</label></th>
+            <th><input type="button" value="点击完成验证"></th>
+            <th><label>请先进行安全验证</label></th>
+        </tr>
+        <tr>
+            <th><label for="phone">手机号</label></th>
+            <th><input type="text" id="phone" placeholder="输入手机号"></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><label>忘记密码时,可通过该手机号码快速找回密码</label><br><label><small>请输入中国大陆手机号码<br>其他地区号码点击这里</small></label></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <input type="text" placeholder="验证码"> 
+                               
+            </th>
+            <th><input  type="button" value="获取短信验证码"></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><input type="checkbox" name="qzone" value="qzone"><label>同时开通QQ空间</label><br><input type="checkbox" name="qzone"
+                    value="qzone"><label>同时开通QQ空间</label></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><input type="button" value="提交注册"></th>
+            <th></th>
+        </tr>
+    </table>
+</body>
+
+</html>

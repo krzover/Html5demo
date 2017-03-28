@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0px;
+        background-color: black;
+        perspective: 1000px;
+        perspective-origin: 50% 80%;
+    }
+     main{
+         width:300px;
+         height: 300px;
+         margin:150px auto;
+         /*background-color: red;*/
+         transform-style: preserve-3d;  
+         transform: rotatex(deg) rotateY(30deg) rotateZ(0deg);
+         opacity: 0.8;
+         animation-name: rotate;
+         animation-duration: 5s;
+         animation-iteration-count: infinite;
+         animation-timing-function: linear;
+     }
+     @keyframes rotate{
+         from{
+             transform: rotatex(0deg) rotateY(0deg) rotateZ(0deg);
+         }
+         to{
+              transform: rotatex(360deg) rotateY(360deg) rotateZ(360deg);
+         }
+     }
+     div{
+         height: 100%;
+         width: 100%;
+         position: absolute;
+     }
+     .font{
+         background-color: yellow;
+         transform: translatez(150px);
+     }
+     .back{
+         background-color: white;
+         transform: translateZ(-150px);
+     }
+     .left{
+         background-color: chartreuse;
+         transform: rotatey(90deg) translatez(-150px);
+         
+     }
+     .right{
+         background-color: slategrey;
+         transform: rotatey(90deg) translatez(150px);
+     }
+     .top{
+         background-color: orangered;
+         transform: rotatex(90deg) translatez(-150px);
+     }
+     .bottom{
+         background-color: saddlebrown;
+         transform: rotatex(90deg) translatez(150px);
+     }
+     img{
+         width: 100%;
+         height: 100%;
+     }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="font"><img src="2.jpg" alt=""></div>
+        <div class="back"><img src="12.jpg" alt=""></div>
+        <div class="left"><img src="22.jpg" alt=""></div>
+        <div class="right"><img src="32.jpg" alt=""></div>
+        <div class="top"><img src="42.jpg" alt=""></div>
+        <div class="bottom"><img src="aa.jpg" alt=""></div>
+    </main>
+</body>
+</html>

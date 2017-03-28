@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历</title>
+    <style>
+        html {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        
+        body {
+            height: 100%;
+        }
+        
+        main {
+
+            margin: 0px auto;
+            /*margin-left: 20%;*/
+            height: 100%;
+            width: 80%;
+            max-width: 600px;
+            max-height: 700px;
+            min-height: 500px;
+            min-width: 400px;
+            background-image: url('wood.png');
+            background-size: 100% 100%;
+            position: absolute;
+        }
+        
+        div {
+            margin: 5% 10% 5% 10%;
+            height: 90%;
+            position: relative;
+        }
+        
+        .card {
+            height: 15.5%;
+            width: 80%;
+            border-radius: 20px;
+        }
+        
+        .icon {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-image: url('wood.png');
+            background-size: 156% 717%;
+        }
+        
+        .l1 {
+            z-index: 8;
+            position: absolute;
+            margin-left: -30px;
+            margin-bottom: 40px;
+            background-color: rgb(31,26,23);
+        }
+        
+        .r1 {
+            z-index: 7;
+            position: absolute;
+            right: -30px;
+            top: 12.125%;
+            background-color: rgb(222,222,220);
+        }
+        
+        .l2 {
+            z-index: 6;
+            position: absolute;
+            margin-left: -30px;
+            top: 24.25%;
+            background-color: rgb(196,190,100);
+        }
+        
+        .r2 {
+            z-index: 5;
+            position: absolute;
+            right: -30px;
+            top: 36.375%;
+            background-color: rgb(186,143,186);
+        }
+        
+        .l3 {
+            z-index: 4;
+            position: absolute;
+            margin-left: -30px;
+            top: 48.5%;
+            background-color: rgb(220,33,76);
+        }
+        
+        .r3 {
+            z-index: 3;
+            position: absolute;
+            right: -30px;
+            top: 60.625%;
+            background-color: rgb(227,239,193);
+        }
+        
+        .l4 {
+            z-index: 2;
+            position: absolute;
+            margin-left: -30px;
+            top: 72.75%;
+            background-color: rgb(213,194,216);
+        }
+        
+        .r4 {
+            z-index: 1;
+            position: absolute;
+            right: -30px;
+            top: 84.875%;
+            background-color: rgb(193,193,193);
+            overflow: hidden;
+        }
+        
+        .xiaoting {
+            margin: 0px;
+            position: absolute;
+            left: 50px;
+            bottom: 30px;
+            font-family: '时尚中黑简体';
+            font-size: 35px;
+            color: rgb(87, 119, 184);
+        }
+        
+        .xiaotingpy {
+            margin: 0px;
+            position: absolute;
+            left: 50px;
+            bottom: 10px;
+            font-family: '时尚中黑简体';
+            font-size: 20px;
+            color: white;
+        }
+        
+        .sim {
+            margin: 0px;
+            position: absolute;
+            right: 60px;
+            top: 0px;
+            font-family: '迷你简双线体';
+            font-size: 65px;
+            color: white;
+        }
+        .clear{
+            clear：both;
+        }
+        .jl2{
+            text-align: right;
+        }
+        .jl2>p{
+            margin: 2px 25px;
+            font-size: 25px;
+            font-family: '时尚中黑简体';
+            color:black;
+        }
+        .minzu>ul{
+            list-style-type: none;
+            margin: 0px 10px;
+            font-family: '时尚中黑简体';
+            color:black;
+        }
+        .jiguan>ul{
+            position: absolute;
+            list-style-type: none;
+            float: left;
+            top: 10px;
+            left: 50px;
+            font-family: '时尚中黑简体';
+            font-size: 15px;
+            color:black;
+        }
+        .lianxi>ul{
+            text-align: right;
+            position: absolute;
+            list-style-type: none;
+            top:10px;
+            right: 15px;
+            font-family: '时尚中黑简体';
+            font-size: 13px;
+            color:black;
+        }
+        .lianxi>ul>li:nth-child(1){
+            font-size: 20px;
+        }
+        .jiaoyu>p:nth-child(1){
+            position: absolute;
+            margin: 0px;
+            text-align: right;
+            right: 15px;
+            top: 10px;
+            font-family: '时尚中黑简体';
+            font-size: 25px;
+            color:white;
+        }
+        .jiudu{
+            position: absolute;
+            margin: 0px;
+            text-align: right;
+            right: 15px;
+            bottom: 10px;
+            font-family: '时尚中黑简体';
+            font-size: 15px;
+            color:white;
+        }
+        .jiaoyu>p:nth-child(4){
+            position: absolute;
+            margin: 0px;
+            text-align: right;
+            left: 15px;
+            bottom: 40px;
+            font-family: '时尚中黑简体';
+            font-size: 25px;
+            color:white;
+        }
+        .shijian{
+            position: absolute;
+            margin: 0px;
+            text-align: right;
+            right: 15px;
+            top: 20px;
+            font-family: '时尚中黑简体';
+            font-size: 25px;
+            color:white;
+        }
+        .shijian2{
+            position: absolute;
+            margin: 0px;
+            text-align: right;
+            left: 15px;
+            bottom: 40px;
+            font-family: '时尚中黑简体';
+            font-size: 25px;
+            color:white;
+        }
+        .shuiping>p:nth-child(1){
+            margin: 0px;
+            position: absolute;
+            text-align: right;
+            right: 15px;
+            top: 10px;
+            font-family: '时尚中黑简体';
+            font-size: 25px;
+            color:black;
+        }
+        .shuiping>p:nth-child(2){
+            margin: 0px;
+            position: absolute;
+            text-align: right;
+            right: 15px;
+            bottom: 8px;
+            font-family: '时尚中黑简体';
+            font-size: 14px;
+            color:black;
+        }
+        .pingjia>p:nth-child(1){
+
+            margin: 0px;
+            position: absolute;
+            text-align: right;
+            right: 15px;
+            top: 22px;
+            font-family: '时尚中黑简体';
+            font-size: 30px;
+            color:black;
+        }
+        .pingjia>p{
+            margin: 0px;
+            position: absolute;
+            text-align: left;
+            left: 5px;
+            top: 5px;
+            font-family: '时尚中黑简体';
+            font-size: 12px;;
+            color:black;
+        }
+        .yuan1{
+            z-index: 2;
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            margin-left: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,245,0,0.7);            
+        }
+        .yuan2{
+            z-index: 1;
+            margin-top: -60px;;
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            right: 20px;
+            border-radius: 50%;
+            background-color: rgba(41,22,111,1);   
+        }
+        .r4>section:nth-child(4){
+            z-index: 50;
+            position: absolute;
+            left: 60px;
+            margin: 20px;
+            font-size: 30px;
+            color: black;
+            font-family: '时尚中黑简体';
+        }
+        .r4>section:nth-child(5){
+            z-index: 50;
+            position: absolute;
+            right: 60px;
+            bottom: 0px;
+            font-size: 40px;
+            color: white;
+            font-family: '时尚中黑简体';
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <section class="l1 left card">
+                <section class="icon"></section>
+                <section>
+                    <p class="xiaoting">小婷</p>
+                    <p class="xiaotingpy">xiaoting</p>
+                    <p class="sim">简历</p>
+                </section>
+            </section>
+            <section class="r1 right card">
+                <section class="icon"></section>
+                <section class="jl2">
+                    <p>个人信息</p> 
+                    <section class="minzu">
+                    <ul>
+                        <li>民族:xx族</li>
+                        <li>出生日期:xx年xx月xx日</li>
+                        <li>身高:xxxcm</li>
+                    </ul>
+                    </section>
+                    <section class="jiguan">
+                    <ul>
+                        <li>籍贯:xxx</li>
+                        <li>政治面貌:xxx</li>
+                        <li>毕业院校:xxx</li>
+                        <li>专业:xxx</li>
+                    </ul>
+                    </section>
+                </section>
+            </section>
+            <section class="l2 left card">
+                <section class="icon"></section>
+                <section class="lianxi">
+                    <ul>
+                        <li>联系方式</li>
+                        <li>电话:13333333333</li>
+                        <li>email:123456789@qq.com</li>
+                        <li>QQ:123456789</li>
+                    </ul>
+                    </section>
+            </section>
+            <section class="r2 right card">
+                <section class="icon"></section>
+                <section class="jiaoyu">
+                <p>教育经历</p>
+                <p class="jiudu">于XXX省XXXX学校<br>就读XXX</p>
+                <p class="jiudu"></p>
+                <p>2007年至2012年7月</p>
+                </section>
+            </section>
+            <section class="l3 left card">
+                <section class="icon"></section>
+                <section>
+                <p class="shijian">实践经历</p>
+                <p class="jiudu">于XXX省XXXX设计有限公司就职<br>担当设计师</p>
+                <p class="jiudu"></p>
+                <p class="shijian2">2010年至2012年7月</p>
+                </section>
+            </section>
+            <section class="r3 right card">
+                <section class="icon"></section>
+                <section class="shuiping">
+                <p>技能水平</p>
+                <p>可熟练操作<br>CoreIDRAW Adobe Photoshop<br>等设计软件与办公软件</p>
+                </section>
+            </section>
+            <section class="l4 left card">
+                <section class="icon"></section>
+                 <section class="pingjia">
+                <p>自我评价</p>
+                <p>1大胆创新,具有敏锐的时尚<br>触角,对设计方面极感兴趣;<br>2.有良好的独立工作能力,工作认真积极,<br>责任心强,有较好的沟通能力和接受能力;<br>3.既有团队精神和协调能力,适应能力强,能吃苦耐劳,待人真诚热情</p>
+                </section>
+            </section>
+            <section class="r4 right card">
+                <section class="icon"></section>
+                <section class="yuan1"></section>
+                <section class="yuan2"></section>
+                <section>求职意向</section>
+                <section>淘宝美工</section>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

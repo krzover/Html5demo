@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="styelsheet" type="one" href="animate.css">
+    <style>
+        body{
+            margin: 0px;
+            height: 100%;
+        }
+    main{
+        margin:10px auto;
+        width: 80%;
+        height: 700px;
+        background-color: coral;
+    }   
+    div{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: darkgreen;
+        margin:0px auto;
+        animation:drop 5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes drop{
+        0%{
+            transform: translateY(0px);
+             background-color: yellow;
+        }
+        20%{
+            transform: translateY(650px);
+             background-color: darkgrey;
+        }
+        40%{
+            transform: translateY(325px);
+             background-color: mediumvioletred;
+        }
+        60%{
+            transform: translateY(650px);
+             background-color: beige;
+            
+        }
+        80%{
+            transform: translateY(488px);
+             background-color: darkolivegreen;
+            
+        }
+        100%{
+            transform: translateY(650px);
+             background-color: black;            
+        }
+    }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <div>            
+        </div>
+        
+    </main>
+</body>
+</html>

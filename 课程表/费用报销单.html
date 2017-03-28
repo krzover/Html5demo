@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            box-shadow: 20px 20px 90px 0px darkblue;
+        }
+        
+        table {
+            border-collapse: collapse;
+            
+        }
+        
+        td {
+            width: 240px;
+            height: 30px;
+            border: 3px solid lightblue;
+        }
+        
+        .float {
+            position: fixed;
+            right: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <caption>
+        <section>
+            <p><b>费用报销单</b></p>
+            <hr style="width:240px;">
+        </section>
+        <section>
+            <span>报销日期&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</span>
+            <span class="float">附件&nbsp;&nbsp;&nbsp;张</span>
+        </section>
+    </caption>
+    <table >
+        <tbody>
+            <tr>
+                <td>费用项目</td>
+                <td>类别</td>
+                <td>金额</td>
+                <td rowspan="2">负责人签章</td>
+                <td rowspan="2">空白</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;1&nbsp;</td>
+                <td>&nbsp;2&nbsp;</td>
+                <td>&nbsp;3&nbsp;</td>
+                <!--<td>&nbsp;4&nbsp;</td>
+                <td>&nbsp;5&nbsp;</td>-->
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td rowspan="2">审查意见</td>
+                <td rowspan="2">空白</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <!--<td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>-->
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td rowspan="2">负责人签章</td>
+                <td rowspan="2">&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <!--<td>&nbsp;&nbsp;</td>-->
+                <!--<td>&nbsp;&nbsp;</td>-->
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td style="text-align: left">&nbsp;$</td>
+                <td>&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="5" style="padding-bottom: 0px;">核实金额(大写)&nbsp;&nbsp;百&nbsp;&nbsp;十&nbsp;&nbsp;万&nbsp;&nbsp;千&nbsp;&nbsp;百&nbsp;&nbsp;十&nbsp;&nbsp;元&nbsp;&nbsp;角&nbsp;&nbsp;分&nbsp;&nbsp;$</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table style="margin: -3px;">
+        <tbody>
+        <tr>
+            <td style="width:200px;">借款金额</td>
+            <td style="width:200px;"></td>
+            <td style="width:200px;">应退金额</td>
+            <td style="width:200px;"></td>
+            <td style="width:200px;">应补金额</td>
+            <td style="width:200px;"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

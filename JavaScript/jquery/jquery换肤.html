@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        div {
+            height: 40px;
+            width: 40px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">1</div>
+    <div class="d2">2</div>
+    <div id="d3">3</div>
+
+
+    <script>
+        $('#d1').css('background-color', 'red')
+        $('div:nth-child(2)').css('background-color', 'blue')
+        $('div:nth-of-type(3)').css('background-color', 'orange')
+
+        $('div').hover(function(d) {
+            $(this).css('border', '5px solid black');
+            console.log(d);
+            $("body").css('background-color', $(this).css('background-color'))
+        }, function() {
+            $(this).css('border', 'none');
+            $("body").css('background-color', 'white')
+        })
+    </script>
+</body>
+
+</html>

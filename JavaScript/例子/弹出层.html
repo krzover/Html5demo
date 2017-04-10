@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹出层</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #viewlayer{
+            width: 100vw;
+            height: 100vh;
+            background-color: lightgray;
+            display: none;
+            position: absolute;
+            opacity: 0.7;
+        }
+        #win{
+            width: 40vw;
+            height: 20vh;
+            position: absolute;
+            top: calc((100vh - 20vh)/2);
+            left: calc((100vw - 40vw)/2);
+            background-color: orange;
+            display: none;
+            
+            z-index: 100;
+        }
+        h2{
+            border-bottom: 2px solid black;
+            font-size: 18px;
+            text-align: center;
+            line-height: 80%;
+        }
+        h2>span{
+            float: right;
+            cursor: pointer;
+        }
+    </style>    
+</head>
+<body>
+    <div id="viewlayer">
+        
+    </div>
+    <!--小窗口-->
+    <div id="win">
+            <h2>小窗口<span>X</span></h2>
+            
+            <section>
+                <button>关闭</button>
+                <button>保存</button>
+            </section>
+    </div>
+    <button onclick="presend()">弹出</button>
+    <script>
+        viewlay = document.getElementById('viewlayer')
+        win = document.getElementById('win')
+
+        function presend(){
+
+            viewlay.style.display = 'block'
+            win.style.display = 'block'
+
+        }
+        xBtn = document.getElementsByTagName('span')[0]
+        xBtn.onclick = function(){
+            viewlay.style.display = 'none'
+            win.style.display = 'none'
+        }
+    </script>
+</body>
+</html>

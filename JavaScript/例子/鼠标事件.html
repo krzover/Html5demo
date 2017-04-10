@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标事件</title>
+    <style>
+        body{
+            margin: 0;
+            /*overflow: hidden;*/
+        }
+        section{
+            width: 30vw;
+            height: 30vw;
+            background-color: blue;
+            border-radius: 50%;
+            margin: 10vh auto;
+            
+        }
+        span{
+            width: 30px;
+            height: 30px;
+            background-color: rgb(215, 45, 242);
+            border-radius: 50%;
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <section id="sec"></section>
+    <br><p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        sec = document.getElementById('sec')
+
+        // sec.onclik = function(){
+
+        // }
+        
+        // 1.事件的触发类型 单击 双击....
+        // 2.触发事件的函数
+        // click 鼠标点下去 在该标签范围内松开，触发函数
+        // 如果点下去移动到标签之外松开，则不会触发函数
+        sec.addEventListener('click',function(){
+
+            console.log('click事件....')
+        })
+        // 双击事件
+        // 一次双击事件会触发两次单击事件
+        sec.addEventListener('dblclick',function(){
+            // 
+            console.log('双击事件....')
+            // 添加过渡效果
+            sec.style.transition = '0.5s ease'
+            // 缩小
+            // 双击缩小，再双击放大
+            if(sec.style.transform == 'scale(0.5)'){
+                sec.style.transform = 'scale(1)'
+                sec.style.backgroundColor = 'blue'
+            }else{
+                sec.style.transform = 'scale(0.5)'
+                sec.style.backgroundColor = 'red'
+            }
+        })
+        // 鼠标任意键按下，触发函数
+        sec.onmousedown = function(){
+
+            console.log('鼠标按下.....')
+        }
+
+        // 鼠标任意键弹起,触发函数
+        sec.onmouseup = function(){
+            console.log('鼠标弹起....')
+        }
+
+        // 鼠标移动，触发函数
+        // window 浏览器窗口对象
+        // event 事件对象
+        spans = document.getElementsByTagName('span')
+
+        window.onmousemove = function(e){
+            // e.pageX 移动事件的x轴坐标
+            // e.pageY 移动事件的y轴坐标
+            // console.log(e.pageX,e.pageY)
+
+            for(var i = 0; i < spans.length; i++){
+                var span = spans[i]
+
+                // 随机一个位置，随机一个大小
+                var top = Math.random() * 300-150
+                var left = Math.random() * 300-150
+                // 随机大小
+                var scl = Math.random()+0.2
+
+                span.style.display = 'block'
+                // 计算并设置span的位置
+                span.style.top = e.pageY + top +'px'
+                span.style.left = e.pageX + left + 'px'
+                // 缩放
+                span.style.transform = 'scale(' + scl + ')'
+                // 改颜色
+                // Math.floor 转换为整数
+                span.style.backgroundColor = 
+                'rgb(' + Math.floor(Math.random()*255) + ','
+                + Math.floor(Math.random()*255) +','
+                + Math.floor(Math.random()*255) + ')'
+
+            }
+        }
+        // 鼠标移动到元素范围内
+        sec.onmouseover = function(){
+            console.log('鼠标来了...')
+        }
+        // 鼠标离开
+        sec.onmouseout = function(){
+            console.log('鼠标走了...')
+        }
+        // 滚轮滚动时，触发函数
+        sec.onwheel =function(e){
+            // e.delaX 鼠标水平方向的滚动
+            // e.delaY 鼠标垂直方向的滚动
+            console.log(e.deltaX,e.deltaY)
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

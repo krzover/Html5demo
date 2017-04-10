@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <div id="tips">
+        <div>
+            <script>
+                tips = false
+                $('#d1').css({
+                    'width': '40px',
+                    'height': '40px',
+                    'background-color': 'red',
+                    'Position': 'relative',
+                })
+                $('#d1').click(function() {
+                    if (tips == false) {
+                        $('#tips').text('记住密码')
+                        $(this).mousemove(function(event) {
+                            console.log(event.pageX);
+                            $('#tips').css({
+                                'margin-top': event.pageY - 30,
+                                'margin-left': event.pageX
+                            })
+                        })
+
+                        tips = true
+                    } else {
+                        $('#tips').text('')
+                        tips = false
+                    }
+
+                })
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            animation: rotate 2s;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @media (min-width:500px) and (max-width:800px) {
+            div {
+                background-color: blue
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        adsfad
+    </div>
+    <div style="background-color: blue;float: bottom">
+        ads adsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfadadsfad
+    </div>
+    <script>
+        var body = document.getElementsByTagName('body')[0]
+        var div = document.createElement('div')
+        div.id = 'nihao'
+        body.appendChild(div)
+    </script>
+</body>
+
+</html>

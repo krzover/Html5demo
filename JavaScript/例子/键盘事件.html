@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>键盘事件</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="block"></div>
+    <script>
+        var block = document.getElementById('block')
+        var left = 0
+        // onkeyup 键盘点下去弹起触发函数
+        // onkeypress 按下去不送开就一直触发 按下去的时候会触发一次
+        window.onkeydown = function(e){
+            if(e.keyCode == 39){
+                left += 10
+                
+            }else if(e.keyCode = 37){
+                left -= 10;
+            }
+
+            block.style.left = left +'px';
+            // e.key获取按键字符
+            // e.keyCode 获取对应的数字
+            console.log(e.key,e.keyCode)
+
+            if(e.key == 'p' && e.ctrlKey){
+                console.log('按下了ctrl + p ')
+            }
+            // ctrlKey Ctrl键
+            // shiftKey Shift键
+            // altKey Alt键
+            if(e.key == "a" && e.ctrlKey && e.shiftKey && e.altKey){
+                
+                console.log('按下了 Ctrl + Shift + Alt + k')
+            }
+        }
+    </script>
+</body>
+</html>

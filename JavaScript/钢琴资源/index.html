@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color: gray;
+            text-align: center;
+        }
+        
+        img {
+            position: relative;
+            width: 80vw;
+            padding: 0px;
+            margin: 0px;
+            z-index: 1;
+        }
+        
+        div {
+            width: 80vw;
+            height: 60vh;
+            padding: 0px;
+            margin: 0px;
+            background-image: url('keys.png');
+            background-size: 80vw 60vh;
+        }
+        
+        button {
+            box-sizing: border-box;
+            margin-top: 35vh;
+            width: 8.1vw;
+            height: 25vh;
+            background-color: gray;
+            opacity: 0;
+            float: center;
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="notes/1.oga"></audio>
+    <div>
+        <button onclick="btnOnclick(1)" class="btn1"></button>
+        <button onclick="btnOnclick(2)" class="btn2"></button>
+        <button onclick="btnOnclick(3)" class="btn3"></button>
+        <button onclick="btnOnclick(4)" class="btn4"></button>
+        <button onclick="btnOnclick(5)" class="btn5"></button>
+        <button onclick="btnOnclick(6)" class="btn6"></button>
+        <button onclick="btnOnclick(7)" class="btn7"></button>
+        <button onclick="btnOnclick(8)" class="btn8"></button>
+        <button onclick="btnOnclick(9)" class="btn9"></button>
+        <!--<img src="keys.png" alt="">-->
+    </div>
+    <script>
+                         music = document.getElementsByTagName('audio')[0]
+                         function btnOnclick(num) {
+                             document.getElementsByTagName('button')[num-1].style.transform
+                             music.src = 'notes/' + num + '.oga'
+                             music.play()
+                             transition-property:
+                         }
+                         window.onkeydown = function (e) {
+                             var i = e.keyCode - 96
+                             if (98 < e.keyCode < 107) {
+                                 music.src = 'notes/' + i + '.oga'
+                                 console.log(e.key, e.keyCode)
+                                 music.play()
+                             }
+                         }
+    </script>
+
+</body>
+
+</html>

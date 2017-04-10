@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id='doBtn' onclick="checkOut(drink,80,25)" type="button"><img src="buttons/drink.png" alt=""></button>
+        <button id='doBtn' onclick="cymbala()" type="button"><img src="buttons/cymbal.png" alt=""></button>
+        <button id='doBtn' onclick="eata()" type="button"><img src="buttons/eat.png" alt=""></button>
+        <button id='doBtn' onclick="farta()" type="button"><img src="buttons/fart.png" alt=""></button>
+        <button id='doBtn' onclick="piea()" type="button"><img src="buttons/pie.png" alt=""></button>
+        <button id='doBtn' onclick="scratcha()" type="button"><img src="buttons/scratch.png" alt=""></button>
+
+    </div>
+    <audio id="player"></audio>
+    <img id='do' src="drink/drink_00.jpg" alt="">
+    <div>
+
+    </div>
+    <script>
+        var img = document.getElementById('do')
+        var player = document.getElementById('player')
+        var isAnimating = false
+        
+        function checkOut(imgName,total,start){
+            if(isAnimating == true){
+                return
+            }
+            var count = 0
+            changeImage()
+            function changeImage(){
+                // 更改为正在做动画
+                isAnimating = true;
+
+                var imgPath = 'images/'+imgName+"/"+imgName+ "_" + (count<10 ? '0'+count:count) + '.jpg'
+                img.src = imgPath;
+                count += 1
+
+                if(count == start){
+                    player.src = 'images/sounds/'+imgName+'.m4a'
+                    player.play()
+                }
+                if (count < total){
+                    setTimeout(changeImage,70)
+                }else{
+                    isAnimating = false
+                }                
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        table {
+            background-color: darkgrey;
+            margin: 5px auto;
+            text-align: center;
+            /*border: 1px solid red;*/
+            border-collapse: collapse;
+            border-radius: 10px;
+        }
+        
+        td {
+            width: 12vw;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="location" value="郑州" placeholder="输入城市">
+    <button>查询天气</button>
+
+
+
+    <script>
+        $('button').click(function() {
+            $('#main').remove()
+            var tqurl = 'http://jisutianqi.market.alicloudapi.com/weather/query?city=' + $('#location').val()
+            $.ajax({
+                url: tqurl,
+                type: 'get',
+                cache: false,
+                timeout: 10000,
+                async: true,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "APPCODE a46f07234ba143c58cd4b048a2b02033")
+                },
+                success: function(data, status, response) {
+
+                    console.log('成功: ');
+                    console.log('data: ', data.result);
+                    $('body').append('<section id="main"></section>')
+                    $('#main').append('<section id="today"></section>')
+                    $('#today').append('<label><h2 style="color:blue;margin:0">' + data.result.city + '&nbsp' + data.result.date + '&nbsp' + data.result.week + '</h2></label>')
+                    $('#today').append('<label><small>更新时间:' + data.result.updatetime + '<small></label>')
+                    $('#today').append('<br><label>天气:' + data.result.weather + '</label>')
+                    $('#today').append('<br><label>湿度:' + data.result.humidity + '</label>')
+                    $('#today').append('<br><label>风向:' + data.result.winddirect + '</label>')
+                    $('#today').append('<br><label>风力:' + data.result.windpower + '</label>')
+                    $('#today').append('<br><label>风速:' + data.result.windspeed + '</label>')
+
+                    $('#main').append('<div><table><tbody><tr><td colspan="28"><h3 style=margin:0px>未来24小时天气</h3></td></tr><tr id=hourtime><td>时间</td></tr><tr id=hourtemp><td>温度</td></tr><tr id=hourweather><td>天气</td></tr></tbody></table></div>')
+                    for (var y = 0; y < data.result.hourly.length; y++) {
+                        $('#hourtime').append('<td>' + data.result.hourly[y].time + '</td>')
+                        $('#hourtemp').append('<td>' + data.result.hourly[y].temp + '</td>')
+                        $('#hourweather').append('<td>' + data.result.hourly[y].weather + '</td>')
+                    }
+                    $('#main').append('<hr>')
+                    $('#main').append('<div><table><tbody><tr id=dailyweather><td>未来7日天气状况</td></tr></tbody></table></div>')
+                    for (var i = 0; i < data.result.daily.length; i++) {
+                        // $('#dailyweather').append('<div style="display:inline-block" class=daily' + i + '></div>')
+
+                        $('#dailyweather').append('<td class=daily' + i + '></td>')
+
+
+                        $('.daily' + i).append('<label style="color:red">' + data.result.daily[i].date + '&nbsp' + data.result.daily[i].week + '</label>')
+
+                        $('.daily' + i).append('<div class=day' + i + '><h3 style="margin:0;color:orange">白天天气</h3></div>')
+                        $('.day' + i).append('<label>最高温度:' + data.result.daily[i].day.temphigh + '</label>')
+                        $('.day' + i).append('<br><label>天气:' + data.result.daily[i].day.weather + '</label>')
+                        $('.day' + i).append('<br><label>风向:' + data.result.daily[i].day.winddirect + '</label>')
+                        $('.day' + i).append('<br><label>风力等级:' + data.result.daily[i].day.windpower + '</label>')
+
+
+                        $('.daily' + i).append('<div class=night' + i + '><h3 style="margin:0;color:orange">晚上天气</h3></div>')
+                        $('.night' + i).append('<label>最低温度:' + data.result.daily[i].night.templow + '</label>')
+                        $('.night' + i).append('<br><label>天气:' + data.result.daily[i].night.weather + '</label>')
+
+                    }
+
+                    // console.log('status: ', status);
+                    // console.log('response: ', response);
+                },
+                error: function(xhr, status, thrown) {
+                    console.log('11请求失败:' + xhr.responseJSON.msg);
+                    console.log('data: ', data);
+                    console.log('status: ', status);
+                    console.log('response: ', response);
+                },
+                complete: function(data, status, response) {
+                    $('body').append('<hr>')
+                    $('body').append('<p>天气查询</p>')
+                    console.log('请求完成了complete');
+                    // console.log('data: ', data);
+                    // console.log('status: ', status);
+                    // console.log('response: ', response);                    
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>  
+<html lang="en">  
+  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <title>Document</title>  
+  
+    <!--外联样式表-->  
+    <!--rel 属性是必须的，规定当前文档与被链接文档/资源之间的关系。-->  
+    <link rel="stylesheet" href="index.css">  
+    <!--在屏幕尺寸小于等于400px的时候，引用该样式表-->  
+    <link rel="stylesheet" media="(max-width:400px)" href="style01.css">  
+    <!--在屏幕尺寸大于等于400px的时候，引用该样式表-->  
+    <link rel="stylesheet" media="(min-width:400px)" href="style02.css">  
+  
+    <style>  
+        body {  
+            /*设置宽度高度*/  
+            width: 200px;  
+            height: 200px;  
+            /*设置字号*/  
+            font-size: 30px;  
+            /*设置字体*/  
+            font-family: '楷体';  
+            /*文字加粗 bold：700*/  
+            font-weight: bold;  
+            /*设置文本样式 斜体*/  
+            font-style: italic;  
+            /*设置下划线效果*/  
+            text-decoration: underline;  
+            /*through:穿过 删除线*/  
+            text-decoration: line-through;  
+            /*更改文字为正常文字*/  
+            font-style: normal;  
+            /*设置首行缩进 em：缩进和标签同等字号的2字符*/  
+            text-indent: 2em;  
+            /*设置文本居中 left 居左(默认) right(居右) center(居中)*/  
+            text-align: center;  
+            /*float 浮动*/  
+            float: right;  
+            /*设置边框宽度*/  
+            border-width: 10px;  
+            /*设置边框的颜色*/  
+            border-color: red;  
+            /*设置边框样式 solid：实线 double:双实线 dotted:点构成的线 */  
+            border-style: dotted;  
+            /*设置边框三个属性的合写*/  
+            border: 2px red solid;  
+            /*设置背景颜色*/  
+            background-color: blue;  
+            /*设置背景图片 url：统一资源定位符*/  
+            background-image: url('img/2.png');  
+            /*设置背景图片的大小*/  
+            background-size: 200px 200px;  
+            /*清除body外边距 可添加四个数值.分别为上右下左*/  
+            margin: 0px;  
+            /*设置外边距, auto ：由浏览器自动计算*/  
+            margin: 20px auto;  
+            /*设置元素的定位方式position,fixed：固定位置*/  
+            /*1.使用固定位置后，如果没有设置该元素的宽度，则宽度由内容决定，并且不再是独自占用一行空间(尽可能少的占用空间)*/  
+            /*2.使用固定定位，元素原来的位置会后面的元素侵占*/  
+            /*3.元素使用固定位置定位后，无法使用margin外边距做位置的调整*/  
+            /*4.如果想要调整位置，可以使用top、left、right、bottom设置相对于浏览器窗口的位置*/  
+            /*使用固定位置后，元素的定宽居中失效，*/  
+            position: fixed;  
+            /*把父级元素设置为相对定位*/  
+            /*让子元素做绝对定位的时候是相对于父元素而言的，而不相对于整个浏览器窗口而言*/  
+            position: relative;  
+            /*absolute：绝对定位*/  
+            /*绝对定位：该元素会浮动起来，原来的位置会被后面的元素侵占*/  
+            /*1.相对于整个浏览器窗口做的绝对定位*/  
+            /*2.父级标签设置为相对定位，字标签的绝对定位是相对于父级标签做的绝对定位*/  
+            /*注：一般绝对定位都是结合相对定位一块使用的*/  
+            position: absolute;  
+            /*定宽居中,上右下左*/  
+            margin: 100px auto 0px auto;  
+            /*当行高和块元素的高度相同时，文字在垂直方向居中*/  
+            line-height: 100px;  
+            /*使用top right bottom left调整位置*/  
+            left: 0px;  
+            bottom: 0px;  
+            /*设置阴影 四个参数分别为x轴方向,y轴方向,模糊程度(值越大越模糊),缩放程度(值越大缩放越明显,阴影颜色)*/  
+            box-shadow: 0 1px 3px 0px black;  
+            /*调整该元素在z轴的堆叠层次，值越大层次越高*/  
+            z-index: 1000;  
+            /*只设置图片宽度，高度等比例缩放*/  
+            width: 200px;  
+            position: relative;  
+            /*设置图片的渐变颜色,三个参数,1方向,2开始颜色,3结束颜色*/  
+            background-image: linear-gradient(to bottom, rgb(14, 105, 188), rgb(110, 172, 223));  
+            /*设置边框是否算入box中box-sizing: content-box|border-box|inherit;*/  
+            box-sizing: border-box;  
+            /*透明度*/  
+            opacity: 0.5;  
+        }  
+        /*父子选择器*/  
+        /*找#nav下的一级子标签中的section*/  
+          
+        #nav>section {}  
+        /*父子选择器*/  
+        /*:nth-child() 找到body中的第几个span子标签*/  
+          
+        body>span:nth-child(1) {}  
+        /*把多个相同样式的标签写在一起，同时设置这些标签的样式*/  
+          
+        h2,  
+        h4,  
+        h6 {}  
+        /*找到某个标签内含有某个属性值的标签*/  
+          
+        figcaption[lang=en]::before {  
+            /*创建计数器 默认为0开始*/  
+            counter-reset: fig;  
+            /*计数器默认加一*/  
+            counter-increment: fig;  
+            /*输出计数器*/  
+            content: counter(fig);  
+        }  
+        /*自定义引用符号*/  
+          
+        #quotes_txt {  
+            quotes: "【" "】" "<" ">";  
+        }  
+ _________________________________________________________________         
+        table {  
+            /*两个单元格是否共用一条边框*/  
+            /*separate 分离 ，不共用一条边框(默认)*/  
+            /*collapse 共用一条边框*/  
+            border-collapse: collapse;  
+            /*设置两个单元格之间的距离，  
+            只有在separate状态下才有效果*/  
+            /*border-spacing: 10px;*/  
+            border: 2px solid green;  
+        }  
+        table{  
+            /*两个单元格是否共用一条边框*/  
+            /*separate 分离 ，不共用一条边框(默认)*/  
+            /*collapse 共用一条边框*/  
+            border-collapse: collapse;  
+            /*设置两个单元格之间的距离，  
+            只有在separate状态下才有效果*/  
+            /*border-spacing: 10px;*/  
+            border: 2px solid green;  
+        }  
+        td{  
+            width: 80px;  
+            height: 40px;  
+            border-bottom: 2px solid green;  
+            text-align: center;  
+        }  
+        thead{  
+            background-color: green;  
+        }  
+        caption{  
+            font-weight: normal;  
+            font-size: 25px;  
+            line-height: 150%;  
+        }  
+          
+        ________________________________________________________________________  
+        /*弹性布局*/  
+          
+        .弹性布局 {  
+            /*块级元素变弹性布局*/  
+            display: flex;  
+            /*行级元素变弹性布局*/  
+            display: inline-flex;  
+            /*flex-direction指定主轴的方向，从而改变项目的排列方向 */  
+            flex-direction: row/row-reverse/column/column-reverse;  
+            /*自动换行*/  
+            flex-wrap: no-wrap/wrap/wrap-reverse;  
+            /*justify-content属性定义了项目在主轴上的对齐方式 */  
+            justify-content: flex-start：左对齐（默认）;  
+            flex-end：右对齐;  
+            center：居中;  
+            space-between：两端对齐（项目间间隔相同）;  
+            space-around：两端间隔对齐（项目间间隔是项目与边框间隔的2倍）;  
+            /*align-items属性定义项目在交叉轴上如何对齐 */  
+            stretch：未设置高度（或height: auto）的项目占满整个容器高度（默认）;  
+            flex-start ：交叉轴起点对齐;  
+            flex-end：交叉轴终点对齐;  
+            center：交叉轴中点对齐;  
+            baseline：项目第一行文字的基线对齐;  
+            /*align-content属性定义多根轴线的对齐方式 这个属性只有在容器有多条主轴是才有效，一条主轴无效 */  
+            stretch：轴线占满整个交叉轴（默认值）;  
+            flex-start：与交叉轴的起点对齐;  
+            flex-end：与交叉轴的终点对齐;  
+            center：与交叉轴的中点对齐;  
+            space-between：与交叉轴两端对齐，轴线间间隔相等;  
+            space-around：每根轴线两侧的间隔都相等;  
+        }  
+          
+        .弹性布局:nth-child(1) {  
+            /*order允许我们自定义项目的排列顺序 默认为0，属性值是数字，数值越小越靠前 */  
+            order: 99;  
+            /*flex-grow定义项目的放大比例 */  
+            默认是0，就是如果没有占满容器整行，也不放大项目，就像上面的图片;  
+            /*flex-shrink定义项目的缩小比例 */  
+            默认是1，就是如果空间不足，该项目将等比缩小;  
+            /*flex-basis定义在分配多余空间之前，项目占据的主轴空间 */  
+            默认auto，就是项目本来的宽度,  
+            我们可以手动设置长度;  
+            /*flex是flex-grow、flex-shrink、flex-basis的复合属性 */  
+            默认值：0 1 auto，后两个属性可选;  
+            /*align-self属性允许个别项目拥有与众不同的对齐方式 就是会覆盖align-items设置的对齐属性 */  
+            默认值auto，继承弹性容器的align-items属性值;  
+            auto/stretch/flex-end/center/baseline;  
+        }  
+          
+        ________________________________________________________________________.过渡动画 {  
+            /*指定某些样式属性可以发生过渡效果*/  
+            /*多个样式之间用，逗号隔开*/  
+            /*transition-property: background-color,font-size;*/  
+            /*all 表示所有支持过渡的样式*/  
+            transition-property: all;  
+            /*设置过渡动画持续的时间*/  
+            /*duration 持续时间*/  
+            /*s 秒单位*/  
+            transition-duration: 5s;  
+            /*过渡动画的缓动函数*/  
+            transition-timing-function: ease-in;  
+            transition-timing-function: cubic-bezier(.35, .65, .97, .01);  
+            /*动画延迟的时间*/  
+            /*delay 延迟*/  
+            transition-delay: 2s;  
+            /*复合属性*/  
+            /*1.要过渡的属性*/  
+            /*2.动画持续的时间*/  
+            /*3.动画速率 linear ease ease-in */  
+            /*4.过渡动画延迟的时间*/  
+            transition: all 5s linear 2s;  
+        }  
+          
+        .变换 {  
+            margin: 200px auto;  
+            width: 10vw;  
+            height: 10vw;  
+            background-color: red;  
+            /*2D 变换 平面变换*/  
+            /*transform：改变 变换*/  
+            /*在x轴进行平移*/  
+            transform: translateX(10vw);  
+            /*在y轴进行平移*/  
+            transform: translateY(10vw);  
+            /*在x，y轴同时平移*/  
+            transform: translate(10vw, 10vw);  
+            /*缩放 scale*/  
+            /*把宽度进行缩放，填写缩放比例*/  
+            transform: scaleX(1.5);  
+            /*把高度进行缩放，填写缩放比例*/  
+            transform: scaleY(1.5);  
+            /*宽度、高度缩放的比例*/  
+            transform: scale(0.5, 1.5);  
+            /*倾斜*/  
+            /*在x轴倾斜，填写角度值*/  
+            transform: skewX(30deg);  
+            /*在y轴倾斜，填写角度值*/  
+            transform: skewY(30deg);  
+            /*在x,y轴倾斜*/  
+            transform: skew(30deg, 30deg);  
+            /*旋转*/  
+            transform: rotateX(45deg);  
+            /*在y轴进行旋转 填写旋转角度值*/  
+            transform: rotateY(45deg);  
+            /*只填一个值表示Z轴的旋转*/  
+            /*正值表示顺时针旋转，负值逆时针旋转*/  
+            transform: rotate(30deg);  
+            /*变换原点：所有的变换都是根据原点位置进行的*/  
+            /*默认值 50% 50% 元素标签的中间位置*/  
+            /*0% 0% 元素的左上角*/  
+            /*left(0%) center(50%) right(100%) 水平方向*/  
+            /*top(0%) center(50%) bottom(100%) 垂直方向*/  
+            /*变换原点可以设置在标签以外的位置*/  
+            transform-origin: 50% 50%;  
+        }  
+          
+        ________________________________________________________________________ .动画3d {  
+            width: 100px;  
+            height: 100px;  
+            background-color: red;  
+            position: absolute;  
+            top: 100px;  
+            /*calc 计算函数*/  
+            left: calc((100% - 100px)/2);  
+            /*定义动画的名称*/  
+            animation-name: translate;  
+            /*设置动画持续的时间*/  
+            animation-duration: 3s;  
+            /*设置动画速率*/  
+            animation-timing-function: linear;  
+            /*设置动画重复的次数*/  
+            /*infinite 无限重复*/  
+            animation-iteration-count: infinite;  
+            /*复合属性*/  
+            animation: rotate 2s linear 1;  
+        }  
+          
+        @keyframes rotate {  
+            0% {  
+                /*开始状态*/  
+                transform: translate(0px, 0px);  
+            }  
+            10% {  
+                /*向右移动100*/  
+                transform: translate(100px, 0px);  
+            }  
+            30% {  
+                /*向下移动100*/  
+                transform: translate(100px, 100px);  
+            }  
+            60% {  
+                /*向左移动100*/  
+                transform: translate(0px, 100px);  
+            }  
+            100% {  
+                /*回到起点*/  
+                transform: translate(0px, 0px);  
+            }  
+        }  
+          
+________________________________________________________  
+        /*媒体查询，根据条件设置不同的样式*/  
+        /*screen 电脑 平板 手机等移动端设备*/  
+        /*@media 查询条件 {符合条件的样式}*/  
+          
+        @media screen and (max-width:500px) {  
+            /*max-width:500px 小于等于500*/  
+            body {  
+                background-color: blue;  
+            }  
+        }  
+          
+        @media screen and (min-width:600px) {  
+            /*min-width:600px 大于等于600*/  
+            body {  
+                background-color: yellow;  
+            }  
+        }  
+        /*检测当前屏幕是横屏还是竖屏*/  
+        /*ratio :比例*/  
+        /*横屏 宽>高   竖屏 宽<高*/  
+          
+        @media screen and (max-aspect-ratio:1/1) {  
+            /*竖屏*/  
+            body {  
+                background-color: green;  
+            }  
+        }  
+          
+        @media screen and (min-aspect-ratio:1/1) {  
+            /*横屏*/  
+            body {  
+                background-color: purple;  
+            }  
+        }  
+        /*自适应字号*/  
+          
+        @media (min-width:700px) {  
+            /*屏幕宽度大于等于700px*/  
+            html {  
+                font-size: 30px;  
+            }  
+        }  
+          
+        @media (max-width:700px) {  
+            /*屏幕宽度小于等于700px*/  
+            html {  
+                font-size: 25px;  
+            }  
+        }  
+          
+        @media (max-width:400px) {  
+            html {  
+                font-size: 20px;  
+            }  
+        }  
+          
+________________________________________________________  
+    .单位 {  
+            /*px像素*/  
+            width: 5px;  
+            /*mm 毫米*/  
+            width: 5mm;  
+            /*cm 厘米*/  
+            width: 5cm;  
+            /*in 寸*/  
+            width: 5in;  
+            /*pt 磅*/  
+            width: 5pt;  
+            /*% 适配各种屏幕*/  
+            width: 5%;  
+            /*em 相对比父标签的字体大小  
+            rem 相对比根标签(html)字体大小*/  
+            width: 5em;  
+            /*pc  派卡*/  
+            width: 5pc;  
+            /*vw viewport width 视口宽度,会把浏览器视口宽度均匀分为100份  
+            */  
+            width: 50vw;  
+            /*vh viewport height 视口高度,会把浏览器视口高度均分为100份*/  
+            height: 20vh;  
+        }  
+    </style>  
+</head>  
+  
+<body>  
+  
+    <!--pre:保留原有代码格式，包括空格、回车等-->  
+    <pre></pre>  
+    <!--p:标记段落性文字标签，块元素标签  宽度默认为100%，高度默认为0，假如块元素中有文字或者其他内容，块元素高度会由内容决定-->  
+    <p></p>  
+  
+    <!--span，标记普通文字，行元素，流式布局，当前行放不下文字内容在进行换行，优先考虑占用横向空间-->  
+    <span></span>  
+  
+    <!--h1~h6 标题标签，一般用于某篇文章或者某段内容的标题，块元素标签-->  
+    <h1></h1>  
+  
+    <!--a:超链接标签，行元素 href：要访问的文件地址：可以是一个文件，也可以是一个网站地址 target:打开当前 连接的方式： 默认：当前窗口  target="_blank" ，新建一个窗口打开-->  
+    <!--a标签中包裹的文字内容，尽量和连接的内容有关-->  
+    <!--html支持的文件，直接在窗口中打开，不支持则调用系统窗口选择应用打开-->  
+    <a href="http://www.baidu.com" target="_blank">百度一下</a>  
+  
+    <!--跳转到某个id对应的标签所在的位置-->  
+    <a href="#top">返回id为top处</a>  
+  
+    <!--class:群体 起名不要有中文，或者纯数字-->  
+    <!--id 在 HTML 文档中必须是唯一的-->  
+    <h1 class='blueText' id='top'>这是h1</h1>  
+  
+    <!--br：回车换行符-->  
+    <br>  
+  
+    <!--横线-->  
+    <hr>  
+  
+    <!--footer：一般用来标记网页页脚内容-->  
+    <footer id="myself">  
+        版权所有 0001-8888888 通信产业园1楼  
+    </footer>  
+  
+    <!--main：一般用来标记网页主体内容-->  
+    <main></main>  
+  
+    <!--粗体文本-->  
+    <br></br>  
+    <!--加粗文本，强调含义稍弱-->  
+    <b></b>  
+    <!--斜体文本，带有强调含义-->  
+    <em></em>  
+  
+    <!--下划线文本，insert带有强调含义，用来标识新增的内容-->  
+    <ins></ins>  
+  
+    <!--删除线文本，delete带有强调含义，用来标识废弃的文字-->  
+    <del></del>  
+  
+    <!--删除线文本，删除含义比较弱-->  
+    <s></s>  
+    <!--小号文字，比正常文字略小-->  
+    <small></small>  
+    <!--上标文字-->  
+    <sup></sup>  
+    <!--下标文字-->  
+    <sub></sub>  
+________________________________________________________  
+    <!--figure插图标签，块元素-->  
+    <figure>  
+        <img src="wf.png" alt="王菲" title="这是王菲">  
+        <!--对插图的描述文字-->  
+        <figcaption>王菲</figcaption>  
+        <figcaption lang='en'>Fei·Wang</figcaption>  
+    </figure>  
+    <!--abbr 如果是英文字符缩写，一般都会用abbr包裹一下，在title属性中，填写该缩写的全拼，鼠标放置该内容时，显示title-->  
+    <abbr title="Hytext Markup language 5">HTML5</abbr>  
+    <!--引用的出处-->  
+    <cite>论语</cite>  
+  
+    <!--ul：无序列表-->  
+    <ul>  
+        <!--li 列表选项-->  
+        <li>HTML5</li>  
+        <li>Python</li>  
+        <li>JAVAWEB</li>  
+    </ul>  
+  
+    <!--ol:有序列表-->  
+    <ol>  
+        <li>张三</li>  
+        <li>李四</li>  
+        <li>王五</li>  
+        <li>赵六</li>  
+    </ol>  
+________________________________________________________  
+    <!--table表格-->  
+    <table>  
+        <!--表格标题,默认是在表格的顶部，并且是居中-->  
+        <caption>表格标题</caption>  
+        <!--表头-->  
+        <thead>  
+            <!--tr表格中的一行-->  
+            <tr>  
+                <!--th 表头中的单元格-->  
+                <th>表头1</th>  
+            </tr>  
+        </thead>  
+        <!--tbody 表的内容部分，可以省略-->  
+        <tbody>  
+            <!--表格主要内容第一行-->  
+            <tr>  
+                <!--td单元格-->  
+                <td>  
+                    <a href="http://www.baidu.com">百度一下</a>  
+                </td>  
+                <!--合并列单元格-->  
+                <td colspan='2'>合并列</td>  
+  
+                <td>单元格4</td>  
+                <!--合并行单元格-->  
+                <td rowspan='2'>合并行</td>  
+            </tr>  
+        </tbody>  
+________________________________________________________  
+        <!--form表单-->  
+        <!--action :动作 表单要提交到的地址-->  
+        <form action="#">  
+            <!--label：文本标签-->  
+            <!--for=id  
+        指的是为哪个id对应的标签添加的说明-->  
+            <!--当点击label，会自动把光标移动到  
+        id对应的文本框内-->  
+            <label for="account">账号：</label>  
+            <!--input 输入操作  
+        type：输入框的类型 text 文本类型-->  
+            <!--name:提交表单时，通过该值获取表单内容  
+        ，name=value，如果表单内容想要提交，  
+        必须设置name值  
+        placeholder 占位字符 起到提醒的作用  
+        -->  
+            <input id="account" type="text" name="account" placeholder="请输入账号"><br>  
+            <label for="psw">密码：</label>  
+            <!--password ：不以明文显示的文字(密码)······-->  
+            <input id="psw" type="password" name="password" placeholder="请输入密码">  
+            <br>  
+            <!--radio:单选-->  
+            <!--单选 name值必须一致-->  
+            <!--male:男性-->  
+            <!--female:女性-->  
+            <!--checked默认选择的选项-->  
+            请选择性别： 男  
+            <input type="radio" name="sex" value="male" checked> 女  
+            <input type="radio" name="sex" value="female"><br>  
+  
+            <!--多选-->  
+            <!--checkbox 方块选项-->  
+            <!--checked 默认选中-->  
+            请选择爱好：<br> 琴  
+            <input type="checkbox" name="play" value="琴" checked><br> 棋  
+            <input type="checkbox" name="platChess" value="棋"><br> 书  
+            <input type="checkbox" name="readBook" value="书"><br> 画  
+            <input type="checkbox" name="draw" value="画">  
+            <br>  
+  
+            <!--下拉列表-->  
+            <!--select 选择；  
+        option:选项-->  
+            出生日期：  
+            <select name="birthday-year">  
+            <option value="1999">1999</option>  
+            <option value="2000">2000</option>  
+            <option value="2001">2001</option>  
+            <option value="2002">2002</option>  
+            <option value="2003">2003</option>  
+        </select>  
+  
+            <!--分组下拉列表-->  
+            <!--optgroup 分组-->  
+            爱好：  
+            <select name="love">  
+            <!--label 这个分组的名称-->  
+            <optgroup label="游戏">  
+                <option value="王者荣耀">王者荣耀</option>  
+                <option value="连连看">连连看</option>  
+                <option value="阴阳师">阴阳师</option>  
+            </optgroup>  
+  
+            <optgroup label="运动">  
+                <option value="跑步">跑步</option>  
+                <option value="篮球">篮球</option>  
+                <option value="足球">足球</option>  
+            </optgroup>  
+        </select>  
+            <br>  
+            <!--  
+            area 区域 范围  
+            rows 行数  
+            cols 列数  
+        -->  
+            个人介绍：<br>  
+            <textarea rows="10" cols="20"></textarea>  
+            <br><br>  
+            <!--区域设置，会添加边界  
+        field:领域 领地-->  
+            <!--legend:刻印 铭文-->  
+            <fieldset>  
+                <legend>请选择专业技能</legend>  
+                Python<input type="checkbox" name="Python" value="Python"><br> HTML  
+                <input type="checkbox" name="HTML" value="Python"><br> JavaScript  
+                <input type="checkbox" name="JavaScript" value="JavaScript">  
+            </fieldset>  
+            <br>  
+            <br>  
+            <!--按钮   
+        submit :提交  
+        会把表单内容提交到action地址  
+        如果填写的信息需要提交，对应的标签中  
+        必须设置name值  提交格式:name值=value值  
+        -->  
+            <input type="submit" value="提交">  
+  
+            <!--重置按钮-->  
+            <!--把表单内容清空-->  
+            <input type="reset" value="重置">  
+  
+            <!--普通按钮-->  
+            <input type="button" value="登录">  
+        </form>  
+________________________________________________________  
+  
+  
+</body>  
+  
+</html>  
+  
+<!-- Display样式总结  
+display:none;       隐藏，空间也会让出来  
+visibility:hidden;      隐藏，空间会保留  
+display:inline;     变成行元素  
+display:block;      变成块元素  
+display:inline-block;   变成行内块元素  
+display:inline-table;       变成行内表格  
+display:list-item;      变成列表项（请参考示例）  
+display:table-*;        变成表格（请参考示例）  
+display:flex;       弹性布局  
+text-align          文本居中  
+vertical-align      标签自身垂直对齐位置（注意居中middle）  
+-->  
+
